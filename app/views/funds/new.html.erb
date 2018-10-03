@@ -1,0 +1,15 @@
+
+
+<%= form_for(@childfund, url: create_child_fund_path(@id), html: {class: "form-group"}) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :kind %>
+  <%= f.text_field :kind, class: "form-control" %>
+
+  <%= f.label :amount %>
+  <%= f.text_field :amount, class: "form-control" %>
+
+  <%= f.submit "Create account", class: "btn btn-primary"%>
+<% end %>
+

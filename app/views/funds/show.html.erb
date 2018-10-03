@@ -1,0 +1,26 @@
+
+<% if @fund.has_parent? %>
+  <%= link_to "back to parent: " + @fund.parent.name, @fund.parent %>
+<% end %>
+
+<p><%= @fund.name %></p>
+
+
+<p>total amount: <%= @fund.total %></p>
+
+<% if @fund.has_children? %>
+  <ul>
+    <% @fund.children.each do |f| %>
+    <li>
+      <%= link_to f.name, f %> <%= f.total %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<p>leftover: <%= @fund.amount %></p>
+<%= link_to "New Subaccount", new_child_fund_path(@fund) %>
+
+
+
+
